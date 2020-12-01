@@ -1,23 +1,32 @@
 import { getChallengeInput } from '../utils/challengeInput';
+import { intCode } from '../utils/intCode';
 
 export async function day02part1() {
   const input = await getChallengeInput('2019', '2');
-  let intCode = input.split(',');
-  intCode[1] = 12;
-  intCode[2] = 2;
-  // let intCode = [1, 1, 1, 4, 99, 5, 6, 0, 99];
-  let index: number = 0;
-  while (intCode[index] != 99) {
-    if (intCode[index] == 1) {
-      intCode[intCode[index + 3]] = intCode[intCode[index + 1]] + intCode[intCode[index + 2]];
-    } else if (intCode[index] == 2) {
-      intCode[intCode[index + 3]] = intCode[intCode[index + 1]] * intCode[intCode[index + 2]];
-    }
-    index += 4;
-  }
-  return intCode[0];
+  let memory = input
+    .split('\n')[0]
+    .split(',')
+    .map((n: string) => Number(n));
+  let result = intCode(12, 2, memory);
+  return result;
 }
 
 export async function day02part2() {
   const input = await getChallengeInput('2019', '2');
+  let memory = input
+    .split('\n')[0]
+    .split(',')
+    .map((n: string) => Number(n));
+  for (let noun = 1; noun < 100; noun++) {
+    for (let verb = 1; verb < 100; verb++) {
+      if (intCode(noun, verb, memory) == 19690720) {
+        return 100 * noun + verb;
+      } else {
+        memory = input
+          .split('\n')[0]
+          .split(',')
+          .map((n: string) => Number(n));
+      }
+    }
+  }
 }
