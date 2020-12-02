@@ -1,4 +1,4 @@
-import { getChallengeInput } from '../utils/challengeInput';
+import { getChallengeInput } from '../utils/global/challengeInput';
 
 export async function day03part1() {
   let input = await getChallengeInput('2019', '3');

@@ -4,7 +4,7 @@
     "module": "commonjs",
     "allowJs": false,
     "outDir": "./out",
-    "strict": true,
+    "strict": false,
     "lib": ["es2019"],
     "typeRoots": ["node_modules/@type"],
     "types": ["node"],

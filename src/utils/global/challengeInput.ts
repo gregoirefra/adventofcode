@@ -1,3 +1,4 @@
+import fs from 'fs';
 import axios, { AxiosInstance, AxiosResponse, AxiosError, AxiosRequestConfig } from 'axios';
 
 export const getChallengeInput = async function (year: string, day: string) {

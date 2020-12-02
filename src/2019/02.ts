@@ -1,5 +1,5 @@
-import { getChallengeInput } from '../utils/challengeInput';
-import { intCode } from '../utils/intCode';
+import { getChallengeInput } from '../utils/global/challengeInput';
+import { intCode } from '../utils/2019/intCode';
 
 export async function day02part1() {
   const input = await getChallengeInput('2019', '2');
