@@ -4,7 +4,6 @@ build
 dist
 .DS_Store
 packages
-.vscode
 .aws-sam
 coverage
 .nyc_output
