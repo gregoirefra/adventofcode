@@ -66,7 +66,7 @@ export async function day04part2() {
   for (let passport of passports) {
     for (let y of passport.split(' ').map(x => x.split('\n'))) {
       for (let yy of y) {
-        checkPassport(([yy.split(':')[0]] = yy.split(':')[1]));
+        // checkPassport(([yy.split(':')[0]] = yy.split(':')[1]));
       }
     }
   }
